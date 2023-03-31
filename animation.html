@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="5; url=/Cal.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        html,body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #4d054d;
+  
+
+}
+.content{
+     display: grid;
+    max-height: 100vh;
+     text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 104px;
+    margin-bottom: 44px;
+}
+.content #preloader{
+    position: absolute;
+    top: 2em;
+    left: 0;
+    font-size: 54px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+margin-left: 2em;
+}
+ #preloader:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 4px rgb(44, 30, 44);
+
+}
+ #preloader:nth-child(2){
+    color: rgb(214, 214, 31);
+    animation: animate 2s ease-in-out infinite;
+}
+@keyframes animate{
+    0%,100%{
+        clip-path: polygon(40% 58%, 71% 66%, 100% 65%, 100% 100%, 80% 100%, 20% 100%, 0 99%, 1% 43%);
+
+    }
+    50%{
+        clip-path: polygon(46% 52%, 81% 42%, 98% 39%, 100% 100%, 80% 100%, 20% 100%, 0 99%, 0 67%); 
+
+    }
+}
+@media (max-width:500px) {
+ 
+    .content{
+        margin-top: 3px;
+        left: 0;
+
+    }
+    #preloader{
+        width: 294px;
+        position: absolute;
+    top: 1em;
+    left: 0;
+    font-size: 2px;
+    margin-left: 14px;
+    }
+    .content h1{
+        letter-spacing: 1px;
+    left: 0;
+
+    }
+    @keyframes animate{
+        0%, 100%{
+        
+            clip-path: polygon(74% 28%, 96% 6%, 10% 6%, 10% 10%, 80% 10%, 20% 10%, 0 89%, 1% 4%);
+    
+        }
+        50% , 80%{
+            
+           clip-path: polygon(46% 52%, 81% 42%, 98% 39%, 100% 100%, 80% 100%, 20% 100%, 0 99%, 0 67%); 
+    
+    
+        }
+        
+    }
+    
+}
+
+    </style>
+</head>
+<body>
+    <div class="content">
+    <h1 id="preloader">calculator</h1>
+    <h1 id="preloader">calculator</h1>
+
+    </div>
+    <script>
+        var content = document.querySelector(`.content`);
+    var loader = document.getElementById(`preloader`);
+    let count = 1;
+    setInterval(()=>{
+        loader.innerHTML = "calculator";
+        count++;
+        // document.body.style.overflow= "unset";
+    } , 1000)
+</script>
+</body>
+</html>
